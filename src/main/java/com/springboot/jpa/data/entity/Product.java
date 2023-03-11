@@ -11,8 +11,6 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-@ToString(exclude = "name")
 @Table(name = "product")
 public class Product {
 
@@ -31,7 +29,5 @@ public class Product {
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
-    public void setUpdateddAt(LocalDateTime now) {
-    }
+    
 }

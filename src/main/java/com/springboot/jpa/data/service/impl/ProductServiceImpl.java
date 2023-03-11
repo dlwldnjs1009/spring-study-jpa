@@ -6,10 +6,12 @@ import com.springboot.jpa.data.dto.ProductResponseDto;
 import com.springboot.jpa.data.entity.Product;
 import com.springboot.jpa.data.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.swing.*;
 import java.time.LocalDateTime;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     private final ProductDAO productDAO;
 
@@ -38,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
         product.setPrice(productDto.getPrice());
         product.setStock(productDto.getStock());
         product.setCreatedAt(LocalDateTime.now());
-        product.setUpdateddAt(LocalDateTime.now());
+        product.setUpdatedAt(LocalDateTime.now());
 
         Product savedProduct = productDAO.insertProduct(product);
 
