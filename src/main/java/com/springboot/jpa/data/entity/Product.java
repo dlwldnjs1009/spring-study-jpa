@@ -1,10 +1,18 @@
 package com.springboot.jpa.data.entity;
 
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString(exclude = "name")
 @Table(name = "product")
 public class Product {
 
@@ -21,8 +29,9 @@ public class Product {
     @Column(nullable = false)
     private Integer stock;
 
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-    private LocalDateTime updateAt;
-
+    public void setUpdateddAt(LocalDateTime now) {
+    }
 }
